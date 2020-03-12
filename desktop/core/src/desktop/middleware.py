@@ -74,6 +74,7 @@ DJANGO_VIEW_AUTH_WHITELIST = [
 ]
 
 if ENABLE_PROMETHEUS.get():
+  LOG.info("ENABLE_PROMETHEUS whitelist enabled")
   DJANGO_VIEW_AUTH_WHITELIST.append(django_prometheus.exports.ExportToDjangoView)
 
 

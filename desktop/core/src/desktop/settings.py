@@ -743,6 +743,7 @@ if desktop.conf.TASK_SERVER.ENABLED.get() or desktop.conf.TASK_SERVER.BEAT_ENABL
 
 PROMETHEUS_EXPORT_MIGRATIONS = False # Needs to be there even when enable_prometheus is not enabled
 if desktop.conf.ENABLE_PROMETHEUS.get():
+  logging.info("ENABLE_PROMETHEUS middleware enabled ...")
   MIDDLEWARE_CLASSES.insert(0, 'django_prometheus.middleware.PrometheusBeforeMiddleware')
   MIDDLEWARE_CLASSES.append('django_prometheus.middleware.PrometheusAfterMiddleware')
 

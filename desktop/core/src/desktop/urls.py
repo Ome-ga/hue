@@ -226,6 +226,7 @@ dynamic_patterns += [
 ]
 
 if ENABLE_PROMETHEUS.get():
+  logging.info("django_prometheus.urls")
   dynamic_patterns += [
     url('', include('django_prometheus.urls')),
   ]
